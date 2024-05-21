@@ -1,0 +1,1 @@
+Pentru a putea afișa imagini atunci când rulați aplicația pe laptop-ul dumneavoastră, vă rugăm să descărcați folderul "imagini" direct în partiția C a sistemului Windows. Astfel, calea către fișierele de imagini va fi de forma: "C:\imagini\meme.jpg". În caz contrar, va fi necesară modificarea manuală a tuturor căilor către imagini.
