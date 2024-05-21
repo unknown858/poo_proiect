@@ -1,0 +1,14 @@
+[2024-05-21 22:25:06] [INFO] [connect] : Database connected successfully!
+[2024-05-21 22:25:08] [INFO] [handle_incoming_connections] : Client connected from IP 172.20.10.6
+[2024-05-21 22:25:37] [INFO] [insert_adl_info_into_database] : Land ad inserted.
+	Additional information:
+		Ad number : 19
+User : dariaandone
+[2024-05-21 22:25:56] [INFO] [save_image] : Image saved.
+[2024-05-21 22:25:56] [INFO] [insert_image_info_into_database] : Image info inserted into database.
+[2024-05-21 22:26:20] [INFO] [save_image] : Image saved.
+[2024-05-21 22:26:20] [INFO] [insert_image_info_into_database] : Image info inserted into database.
+[2024-05-21 22:26:42] [INFO] [save_image] : Image saved.
+[2024-05-21 22:26:42] [INFO] [insert_image_info_into_database] : Image info inserted into database.
+[2024-05-21 22:26:46] [ERROR] [save_image] : Image coudn't be saved.
+[2024-05-21 22:26:46] [INFO] [insert_image_info_into_database] : Image info inserted into database.
