@@ -61,7 +61,6 @@ void FavoriteWindow::afiseazaNumeClient()
 void FavoriteWindow::adaugaButonIntoarcere()
 {
     QPushButton *button = new QPushButton ("Întoarce-te", this);
-    //button->setStyleSheet("background-color: rgb(254, 253, 240)");
     button->setGeometry(80,50,120,40);
 
     QFont font("Gabriola", 15, QFont::Normal);
@@ -75,6 +74,8 @@ void FavoriteWindow::onIntoarceButtonPressed()
 {
     ProfilWindow *pw = new ProfilWindow();
     pw->show();
+
+    this->close();
 }
 
 void FavoriteWindow::afiseazaFeed()
@@ -92,8 +93,6 @@ void FavoriteWindow::afiseazaFeed()
     QVBoxLayout *contentLayout = new QVBoxLayout(contentWidget);
 
     Client::getInstance().clearVectorFav();
-
-    //const char * filtre = "000000";
     Client::getInstance().request_feed_fav(Client::getInstance().getUsername());
 
     std::vector<Proprietate*> proprietati = Client::getInstance().getFavorite();

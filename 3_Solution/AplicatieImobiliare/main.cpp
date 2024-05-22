@@ -1,8 +1,5 @@
 #include "mainwindow.h"
 #include "client.h"
-
-#include "principalwindow.h"
-
 #include <QApplication>
 
 int main(int argc, char *argv[])
@@ -13,9 +10,5 @@ int main(int argc, char *argv[])
     w.show();
 
     Client::getInstance();
-
-    // PrincipalWindow *pw=new PrincipalWindow(nullptr,"");
-    // pw->show();
-
     return a.exec();
 }

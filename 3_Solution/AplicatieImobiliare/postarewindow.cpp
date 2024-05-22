@@ -51,6 +51,8 @@ void PostareWindow::onVizualizeazaPressed()
 {
     ProfilWindow * pw = new ProfilWindow(nullptr, m_proprietate->getNumeVanzator().c_str());
     pw->show();
+
+    this->close();
 }
 
 void PostareWindow::onBlocheazaPostarePressed()
@@ -142,6 +144,8 @@ void PostareWindow::onTrimiteMsjButtonPressed()
 
     MesagerieWindow *mw =new MesagerieWindow(nullptr, m_proprietate->getNumeVanzator(), "postare");
     mw->show();
+
+    this->close();
 }
 
 void PostareWindow::adaugaButonCumparare(QWidget *parentWidget)
@@ -213,12 +217,15 @@ void PostareWindow::adaugaRev()
     PostareWindow *postw = new PostareWindow(m_proprietate, this, m_apelant);
 
     postw->show();
+    this->close();
 }
 
 void PostareWindow::onCumparaButtonPressed()
 {
     CumparaWindow *cw = new CumparaWindow(nullptr, m_proprietate);
     cw->show();
+
+    this->close();
 }
 
 void PostareWindow::adaugaButonIntoarcere(QWidget *parentWidget)
@@ -244,15 +251,21 @@ void PostareWindow::onIntoarceButtonPressed()
     {
         FavoriteWindow *fw = new FavoriteWindow();
         fw->show();
+
+        this->close();
     }
     else if (m_apelant=="profil") {
         ProfilWindow *profw = new ProfilWindow();
         profw->show();
+
+        this->close();
     }
     else
     {
         PrincipalWindow *pw = new PrincipalWindow(nullptr, Client::getInstance().getUsername().c_str());
         pw->show();
+
+        this->close();
     }
 }
 

@@ -61,6 +61,8 @@ void PrincipalWindow::onAdaugaOfertantPressed()
 {
     SigninWindow *sw = new SigninWindow(nullptr, Client::getInstance().getUsername(), "administrator");
     sw->show();
+
+    this->close();
 }
 
 void PrincipalWindow::adaugaButonVizualizeazaProfil()
@@ -105,12 +107,15 @@ void PrincipalWindow::onVizualizeazaChatPressed()
 
     MesagerieWindow *mw =new MesagerieWindow();
     mw->show();
+    this->close();
 }
 
 void PrincipalWindow::onButonVizualizeazaProfilPressed()
 {
     ProfilWindow * pw = new ProfilWindow();
     pw->show();
+
+    //this->close();
 }
 
 void PrincipalWindow::adaugaFiltrele()
@@ -468,6 +473,7 @@ void PrincipalWindow::sortare()
 
     PrincipalWindow *pws = new PrincipalWindow(nullptr, Client::getInstance().getUsername().c_str(), filtru);
     pws->show();
+    this->close();
 }
 
 void PrincipalWindow::adaugaButonAdaugaPostare()
@@ -491,6 +497,7 @@ void PrincipalWindow::onAdaugaPostareButtonPressed()
 {
     AdaugaPostareWindow *apw =  new AdaugaPostareWindow(this);
     apw->show();
+    this->close();
 }
 
 void PrincipalWindow::adaugaWhiteBg()

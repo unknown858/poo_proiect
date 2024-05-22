@@ -39,6 +39,8 @@ void MultumireWindow::onIntoarceButtonPressed()
 {
     PrincipalWindow *pw = new PrincipalWindow(nullptr, QString::fromStdString(Client::getInstance().getUsername()));
     pw->show();
+
+    this->close();
 }
 
 

@@ -41,8 +41,7 @@ private slots:
     void creeazaEmail();
     void creeazaUserParola();
     void creeazaTelefon();
-    bool verificaDate(QString nume, QString prenume, QString telefon,
-                      QString email, QString username, QString parola);
+    bool verificaDate(QString nume, QString prenume, QString telefon, QString email, QString username, QString parola);
 
     void clearBox();
 

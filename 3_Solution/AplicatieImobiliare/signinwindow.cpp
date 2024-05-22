@@ -188,11 +188,15 @@ void SigninWindow::onIntoarceButtonPressed()
     {
         PrincipalWindow *pw = new PrincipalWindow(nullptr, this->m_username.c_str());
         pw->show();
+
+        //this->close();
     }
     else
     {
         SecondWindow *secondw = new SecondWindow(this);
         secondw->show();
+
+        //this->close();
     }
 }
 

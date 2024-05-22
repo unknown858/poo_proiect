@@ -142,12 +142,16 @@ void LoginWindow::deschidePaginaPrincipala()
     Client::getInstance().adaugaUsername(username.toStdString());
     PrincipalWindow *pw = new PrincipalWindow(nullptr, username);
     pw->show();
+
+    //this->close();
 }
 
 void LoginWindow::onIntoarceButtonPressed()
 {
     SecondWindow *secondw = new SecondWindow(this);
     secondw->show();
+
+    //this->close();
 }
 
 bool LoginWindow::verificaDate(QString username, QString parola)

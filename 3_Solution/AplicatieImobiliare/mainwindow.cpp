@@ -62,6 +62,4 @@ void MainWindow::afiseazaSecondWindow()
 {
     SecondWindow *secondWindow = new SecondWindow(this);
     secondWindow->show();
-
-    //this->hide();
 }

@@ -82,6 +82,8 @@ void AdaugaPostareWindow::onIntoarcerePressed()
 {
     PrincipalWindow *pw =new PrincipalWindow(nullptr, Client::getInstance().getUsername().c_str());
     pw->show();
+
+    this->close();
 }
 
 void AdaugaPostareWindow::introduDatele()
@@ -401,6 +403,7 @@ void AdaugaPostareWindow::trimitereDatePostare()
 
         ProfilWindow * pw = new ProfilWindow();
         pw->show();
+        this->close();
     }
 }
 

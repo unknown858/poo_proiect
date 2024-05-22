@@ -29,8 +29,6 @@ public:
 class Feedback : public IFeedback
 {
 private:
-    // std::string m_userGiver;
-    // std::string m_feedback;
 
 public:
     Feedback()=default;
@@ -76,11 +74,7 @@ public:
     Proprietate(TipProprietate tip, float pret, float suprafata, std::string tipAnunt, std::string vanzator, std::string locatie, bool blocat, int idPostare):
         m_tip(tip), m_tipAnunt(tipAnunt), m_vanzator(vanzator), m_pret(pret), m_suprafata(suprafata), m_locatie(locatie), m_blocat(blocat), m_idPostare(idPostare) {}
 
-
-
-    virtual ~Proprietate() {
-
-    }
+    virtual ~Proprietate() {}
 
     virtual std::string getTipAnunt() = 0;
     virtual std::string getNumeVanzator() = 0;
@@ -116,8 +110,6 @@ public:
     CasaApartament(TipProprietate tip, float pret, float suprafata, std::string tipAnunt,
                    std::string vanzator, std::string locatie, bool blocat, int idPostare):
         Proprietate(tip, pret, suprafata, tipAnunt, vanzator, locatie, blocat, idPostare){}
-
-
 
     ~CasaApartament() override {}
 
@@ -155,8 +147,6 @@ public:
     void setData(std::string data) override {this->m_data = data;}
     void setDescriere(std::string desc) override {this->m_descriere=desc;}
     void setNrCamere(int nr) override {this->m_nrCamere = nr;}
-
-    //void addFeedback(std::string idSender, std::string text) override {this->m_feedb.push_back(new Feedback(idSender, text));}
 
     void clearFeedback() override {this->m_feedb.clear();}
     bool getStatusPostare() override
@@ -213,8 +203,6 @@ public:
     void setData(std::string data) override{this->m_data = data;}
     void setDescriere(std::string desc) override {this->m_descriere=desc;}
     void setNrCamere(int nr) override {this->m_nrCamere = nr;}
-
-    //void addFeedback(std::string idSender, std::string text) override {this->m_feedb.push_back(new Feedback(idSender, text));}
 
     void clearFeedback() override {this->m_feedb.clear();}
     bool getStatusPostare() override

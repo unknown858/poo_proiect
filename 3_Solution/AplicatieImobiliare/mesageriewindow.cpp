@@ -39,7 +39,6 @@ void MesagerieWindow::conversatie(std::string nume)
     containerLayout->addWidget(scrollArea);
 
     layout()->addWidget(containerWidget);
-    //layout()->addWidget(scrollArea);
 
     QWidget *contentWidget = new QWidget(this);
     QVBoxLayout *contentLayout = new QVBoxLayout(contentWidget);
@@ -103,6 +102,8 @@ void MesagerieWindow::trimiteMesajul()
 
     MesagerieWindow *mw =new MesagerieWindow(nullptr, this->m_nume, this->m_pagina);
     mw->show();
+
+    this->close();
 }
 
 void MesagerieWindow::prieteni()
@@ -151,12 +152,13 @@ void MesagerieWindow::adaugaConversatie(std::string destinatar)
 
     MesagerieWindow *mw = new MesagerieWindow(nullptr, destinatar);
     mw->show();
+
+    this->close();
 }
 
 void MesagerieWindow::adaugaButonIntoarcere()
 {
     QPushButton *button = new QPushButton ("Întoarce-te", this);
-    //button->setStyleSheet("background-color: rgb(254, 253, 240)");
     button->setGeometry(80,50,120,40);
 
 
@@ -171,4 +173,6 @@ void MesagerieWindow::onIntoarceButtonPressed()
 {
     PrincipalWindow *pw = new PrincipalWindow (nullptr, QString::fromStdString(Client::getInstance().getUsername()));
     pw->show();
+
+    this->close();
 }

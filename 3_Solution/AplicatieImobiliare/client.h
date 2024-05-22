@@ -29,8 +29,7 @@ private:
     std::vector<std::pair<std::string, std::string>> sender_mesaj;
 
     std::vector<IFeedback*> feed;
-    int nrPostari = 0; //in feed
-
+    int nrPostari = 0;
     bool admin=false;
     bool succesSold=false;
     int statusTranzactie;
@@ -59,10 +58,10 @@ public:
     SOCKET client_sock;
     static Client& getInstance()
     {
-        // Se va crea un obiect static la prima apelare a acestei metode
         static Client instance;
         return instance;
     }
+
     void send_message(const char* buffer);
 
     void unblock_post(const char* ad_nr);
@@ -84,6 +83,7 @@ public:
         this->m_listaPostari.push_back(pr);
         this->nrPostari++;
     }
+
     std::vector<Proprietate*> getPostari(){return this->m_listaPostari;}
     void adaugaCaleInVector(std::string cale, int idPostare);
     void clearVector(){
@@ -95,10 +95,7 @@ public:
         this->m_listaPostari.clear();
     }
 
-    void clearVectorFav(){
-
-        this->m_favorite.clear();
-    }
+    void clearVectorFav(){ this->m_favorite.clear(); }
 
     void incNrPostari(){this->nrPostari++;}
 
@@ -122,16 +119,8 @@ public:
     void request_feed_fav(std::string username);
     void request_feed_profile(std::string username);
 
-
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111
-
-    void adaugaFeedback(const char* ad_id, std::string idSender, std::string text, std::string idPostare)
-    {
-        this->feed.push_back(new Feedback(idSender, text, idPostare));
-    }
-
+    void adaugaFeedback(const char* ad_id, std::string idSender, std::string text, std::string idPostare){this->feed.push_back(new Feedback(idSender, text, idPostare)); }
     bool isAdmin() const { return admin; }
-
     void setAdmin(bool val) {this->admin=val;}
     void setSold(bool val){this->succesSold=val;}
 
@@ -145,37 +134,15 @@ public:
 
     void block_post(const char*ad_nr);
 
-    void setAddDeleted(bool val)
-    {
-        this->addDeletedSuccesfully = val;
-    }
+    void setAddDeleted(bool val){ this->addDeletedSuccesfully = val; }
+    bool getAddDeletedSuccesfully() {return this->addDeletedSuccesfully; }
+    void adaugaUtilizator(std::string utilizator) {this->m_utilizatoriAplicatie.push_back(utilizator);}
 
-    bool getAddDeletedSuccesfully()
-    {
-        return this->addDeletedSuccesfully;
-    }
+    std::vector<std::string> getVectorUtilizatori() {return this->m_utilizatoriAplicatie; }
 
+    void aduagaSenderMesaj(std::string sender, std::string mesaj) {this->sender_mesaj.push_back(std::make_pair(sender, mesaj));}
 
-
-    void adaugaUtilizator(std::string utilizator)
-    {
-        this->m_utilizatoriAplicatie.push_back(utilizator);
-    }
-
-    std::vector<std::string> getVectorUtilizatori()
-    {
-        return this->m_utilizatoriAplicatie;
-    }
-
-    void aduagaSenderMesaj(std::string sender, std::string mesaj)
-    {
-        this->sender_mesaj.push_back(std::make_pair(sender, mesaj));
-    }
-
-    std::vector<std::pair<std::string, std::string>> getSenderMesaj()
-    {
-        return this->sender_mesaj;
-    }
+    std::vector<std::pair<std::string, std::string>> getSenderMesaj(){ return this->sender_mesaj; }
 
     void cleanSenderMsg()
     {
@@ -189,25 +156,10 @@ public:
         }
     }
 
-    void clearFeedback()
-    {
-        this->feed.clear();
-    }
-
-    void adaugaStatusTranzactie(int status)
-    {
-        this->statusTranzactie = status;
-    }
-
-    void setStergereOfertant(int val)
-    {
-        this->stergereOfertant=val;
-    }
-
-    int getStergereOfertant()
-    {
-        return this->stergereOfertant;
-    }
+    void clearFeedback(){ this->feed.clear(); }
+    void adaugaStatusTranzactie(int status){ this->statusTranzactie = status; }
+    void setStergereOfertant(int val) { this->stergereOfertant=val; }
+    int getStergereOfertant() { return this->stergereOfertant; }
 
 private:
     void get_ad_details(char* payload);

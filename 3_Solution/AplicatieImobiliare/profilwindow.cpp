@@ -47,7 +47,7 @@ void ProfilWindow::adaugaSoldCurent()
 
 void ProfilWindow::adaugaLabelIntroducereSold()
 {
-    if(!Client::getInstance().isAdmin())
+    if(!Client::getInstance().isAdmin() && this->m_username==Client::getInstance().getUsername())
     {
         QHBoxLayout* labelLineEditLayout = new QHBoxLayout();
 
@@ -113,12 +113,16 @@ void ProfilWindow::onAdaugaPostareButtonPressed()
 {
     AdaugaPostareWindow *apw =  new AdaugaPostareWindow(this);
     apw->show();
+
+    this->close();
 }
 
 void ProfilWindow::afisezaFavorite()
 {
     FavoriteWindow *fw = new FavoriteWindow();
     fw->show();
+
+    this->close();
 }
 
 void ProfilWindow::afiseazaNumeClient()
@@ -173,6 +177,8 @@ void ProfilWindow::onIntoarceButtonPressed()
 {
     PrincipalWindow *pw = new PrincipalWindow(nullptr, Client::getInstance().getUsername().c_str());
     pw->show();
+
+    this->close();
 }
 
 void ProfilWindow::afiseazaFeed()

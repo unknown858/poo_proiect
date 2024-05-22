@@ -78,6 +78,8 @@ void SecondWindow::onLoginButtonPressed()
     LoginWindow *loginw = new LoginWindow(this);
 
     loginw->show();
+
+    //this->close();
 }
 
 void SecondWindow::onSigninButtonPressed()
@@ -85,4 +87,6 @@ void SecondWindow::onSigninButtonPressed()
     SigninWindow *signinw = new SigninWindow(this);
 
     signinw->show();
+
+    //this->close();
 }

@@ -1,5 +1,0 @@
-casa vanzare 400000 200 4 aandei 5
-Suceava, str. Lalelelor
-C:/imagini/postari/c1p1.jpg
-C:/imagini/postari/c1p2.jpg
-C:/imagini/postari/c1p3.jpg

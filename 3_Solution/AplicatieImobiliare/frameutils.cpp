@@ -1,4 +1,5 @@
 #include "FrameUtils.h"
+#include <filesystem>
 #include <fstream>
 #include <string>
 #include<iostream>
@@ -291,7 +292,6 @@ bool Frame::send_data(char* payload, int payload_size, SOCKET& sock, data_type t
         std::cout << FRAME_SIZE << "\n";
         ::send(sock, frame, FRAME_SIZE + 1, 0);
 
-        //delete[]frame;
         char ack;
         ::recv(sock, &ack, 1, 0);
 
@@ -402,8 +402,6 @@ bool Frame::save_image(const std::string& image_path, SOCKET& sock, int size)
 {
     std::vector<char> buffer(size);
     std::string filename = image_path;
-
-    int received = 0;
 
     int bytes = ::recv(sock, buffer.data(), size, 0);
 

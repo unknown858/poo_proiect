@@ -99,6 +99,8 @@ void ProprietateWidget::stergePostare()
         QMessageBox::information(this, "Informare", "Postarea a fost ștearsă cu succes!");
         ProfilWindow * pw = new ProfilWindow();
         pw->show();
+
+        this->close();
     }
     else
     {
@@ -140,5 +142,7 @@ void ProprietateWidget::afiseazaDetalii()
     PostareWindow *postw = new PostareWindow(m_proprietate, this, m_apelant);
 
     postw->show();
+
+    this->close();
 }
 

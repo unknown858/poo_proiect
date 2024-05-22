@@ -27,10 +27,8 @@ private slots:
     void creeazaButonConectare();
     void onIntoarceButtonPressed();
     void onConectareButtonPressed();
-    //void trimiteDateServer();
     bool verificaDate(QString username, QString parola);
     void deschidePaginaPrincipala();
-    //void trimitere(QString username, QString parola);
 
 private:
     Ui::LoginWindow *ui;

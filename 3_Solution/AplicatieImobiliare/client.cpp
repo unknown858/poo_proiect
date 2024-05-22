@@ -21,7 +21,7 @@ Client::Client()
     clientService.sin_family = AF_INET;
     //inet_pton(AF_INET, "172.16.41.161", &clientService.sin_addr.s_addr);
     //inet_pton(AF_INET, "127.0.0.1", &clientService.sin_addr.s_addr);
-    inet_pton(AF_INET, "172.20.10.3", &clientService.sin_addr.s_addr);
+    inet_pton(AF_INET, "172.20.10.4", &clientService.sin_addr.s_addr);
     clientService.sin_port = htons(12345);
     int ret = connect(client_sock, (sockaddr*)&clientService, sizeof(clientService));
     if (ret == SOCKET_ERROR) {

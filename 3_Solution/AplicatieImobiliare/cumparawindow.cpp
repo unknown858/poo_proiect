@@ -96,6 +96,8 @@ void CumparaWindow::incepeTranzactie()
             QMessageBox::critical(this, "Atenție!", "Postarea este blocată! Ofertantul a fost șters de pe platformă!");
             PrincipalWindow *pr=new PrincipalWindow(nullptr, Client::getInstance().getUsername().c_str());
             pr->show();
+
+            this->close();
         }
     }
 }
@@ -190,6 +192,8 @@ void CumparaWindow::onIntoarceButtonPressed()
 {
     PrincipalWindow *pr=new PrincipalWindow(nullptr, Client::getInstance().getUsername().c_str());
     pr->show();
+
+    //this->close();
 }
 
 bool CumparaWindow::valideaza()
